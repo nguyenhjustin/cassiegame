@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Title -->
+    <title>For Cassie :)</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/game.css" />
+
+    <!-- JavaScript -->
+    <script src="https://threejs.org/build/three.min.js"></script>
+    <!-- <script type="text/javascript" src="js/three.min.js"></script> -->
+    <!-- <script type="text/javascript" src="js/TweenMax.min.js"></script> -->
+
+    <script type="text/javascript" src="js/game.js"></script>
+    <script type="text/javascript" src="js/scene.js"></script>
+    <script type="text/javascript" src="js/lights.js"></script>
+    <script type="text/javascript" src="js/sea.js"></script> 
+    <script type="text/javascript" src="js/cloud.js"></script> 
+    <script type="text/javascript" src="js/sky.js"></script> 
+    <script type="text/javascript" src="js/airplane.js"></script> 
+    <script type="text/javascript" src="js/enemy.js"></script> 
+    <script type="text/javascript" src="js/letters.js"></script> 
+  </head>
+
+  <body>
+    <!-- Container holding the entire game. -->
+    <div class="GameHolder" id="gameHolder">
+      <!-- Container for the game world. -->
+      <div id="world"></div>
+
+      <div class="Header">
+        <!-- Score. -->
+        <div class="Score" id="score">
+          <!-- Energy Bar. -->
+          <div class="ScoreContent" id="energy">
+            <div class="ScoreLabel">Energy</div>
+            <div class="ScoreValue ScoreValueEnergy" id="energyValue">
+              <div class="EnergyBar" id="energyBar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Click to Replay Text. -->
+      <div class="Message MessageReplay" id="replayMessage">
+        Click to Replay
+      </div>
+      
+      <!-- Instructions Text. -->
+      <div class="Message MessageInstructions" id="instructions">
+        Grab the Letters<span>Avoid the Red Objects</span>
+      </div>
+    </div>
+  </body>
+</html>
