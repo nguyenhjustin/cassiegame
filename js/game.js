@@ -419,6 +419,9 @@ function AddEventListeners()
 	// Add mouse position listener.
 	document.addEventListener('mousemove', HandleMouseMove, false);
 	document.addEventListener('mouseup', HandleMouseUp, false);
+
+	document.addEventListener('touchmove', HandleTouchMove, false);
+	document.addEventListener('touchend', HandleTouchEnd, false);
 }
 
 /**
@@ -575,12 +578,32 @@ function HandleMouseMove(event)
 	//console.log(MousePosition);
 }
 
+function HandleTouchMove(event)
+{
+	event.preventDefault();
+	var tx = -1 + (event.touches[0].pageX / Width) * 2;
+	var ty = 1 - (event.touches[0].pageY / Height) * 2;
+	
+	MousePosition.x = tx;
+	MousePosition.y = ty;
+}
+
 /**
  * @summary
  * Event handler for mouse up event.
  * @param {} event 
  */
 function HandleMouseUp(event)
+{
+	if (Game.status == GameStatus.Lose)
+	{
+		console.log("Restarting game.");
+		Game.Reset();
+		HideReplay();
+	}
+}
+
+function HandleTouchEnd(event)
 {
 	if (Game.status == GameStatus.Lose)
 	{
