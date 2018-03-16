@@ -202,6 +202,26 @@ Letter.G = function()
   return new Letter("G", group);
 }
 
+Letter.H = function()
+{
+  var size = GridSize;
+  var group = new THREE.Group();
+
+  group.add(Letter.GetCenter(size));
+  group.add(Letter.GetLeftCenter(size));
+  group.add(Letter.GetRightCenter(size));
+  group.add(Letter.GetDiagonalUpLeft(size));
+  group.add(Letter.GetDiagonalUpRight(size));
+  group.add(Letter.GetTopLeft(size));
+  group.add(Letter.GetTopRight(size));
+  group.add(Letter.GetDiagonalDownLeft(size));
+  group.add(Letter.GetDiagonalDownRight(size));
+  group.add(Letter.GetBotLeft(size));
+  group.add(Letter.GetBotRight(size));
+
+  return new Letter("H", group);
+}
+
 Letter.I = function()
 {
   var size = GridSize;
@@ -218,6 +238,44 @@ Letter.I = function()
   group.add(Letter.GetBotRight(size));
 
   return new Letter("I", group);
+}
+
+Letter.J = function()
+{
+  var size = GridSize;
+  var group = new THREE.Group();
+
+  group.add(Letter.GetRightCenter(size));
+  group.add(Letter.GetDiagonalUpRight(size));
+  group.add(Letter.GetTopMiddle(size));
+  group.add(Letter.GetTopRight(size));
+  group.add(Letter.GetTop2Right(size));
+  group.add(Letter.GetDiagonalDownLeft(size));
+  group.add(Letter.GetDiagonalDownRight(size));
+  group.add(Letter.GetBotMiddle(size));
+  group.add(Letter.GetBotLeft(size));
+  group.add(Letter.GetBotRight(size));
+
+  return new Letter("J", group);
+}
+
+Letter.K = function()
+{
+  var size = GridSize;
+  var group = new THREE.Group();
+  
+  group.add(Letter.GetCenter(size));
+  group.add(Letter.GetLeftCenter(size));
+  group.add(Letter.GetDiagonalUpLeft(size));
+  group.add(Letter.GetDiagonalUpRight(size));
+  group.add(Letter.GetTopLeft(size));
+  group.add(Letter.GetTop2Right(size));
+  group.add(Letter.GetDiagonalDownLeft(size));
+  group.add(Letter.GetDiagonalDownRight(size));
+  group.add(Letter.GetBotLeft(size));
+  group.add(Letter.GetBot2Right(size));
+
+  return new Letter("K", group);
 }
 
 Letter.L = function()
@@ -299,6 +357,45 @@ Letter.O = function()
   return new Letter("O", group);
 }
 
+Letter.P = function()
+{
+  var size = GridSize;
+  var group = new THREE.Group();
+
+  group.add(Letter.GetCenter(size));
+  group.add(Letter.GetLeftCenter(size));
+  group.add(Letter.GetDiagonalUpLeft(size));
+  group.add(Letter.GetDiagonalUpRight(size));
+  group.add(Letter.GetTopMiddle(size));
+  group.add(Letter.GetTopLeft(size));
+  group.add(Letter.GetDiagonalDownLeft(size));
+  group.add(Letter.GetBotLeft(size));
+
+  return new Letter("P", group);
+}
+
+Letter.Q = function()
+{
+  var size = GridSize;
+  var group = new THREE.Group();
+
+  group.add(Letter.GetCenter(size));
+  group.add(Letter.Get2LeftCenter(size));
+  group.add(Letter.Get2RightCenter(size));
+  group.add(Letter.GetDiagonalUp2Left(size));
+  group.add(Letter.GetDiagonalUp2Right(size));
+  group.add(Letter.GetTopMiddle(size));
+  group.add(Letter.GetTopLeft(size));
+  group.add(Letter.GetTopRight(size));
+  group.add(Letter.GetDiagonalDown2Left(size));
+  group.add(Letter.GetDiagonalDownRight(size));
+  group.add(Letter.GetBotMiddle(size));
+  group.add(Letter.GetBotLeft(size));
+  group.add(Letter.GetBot2Right(size));
+
+  return new Letter("Q", group);
+}
+
 Letter.R = function()
 {
   var size = GridSize;
@@ -336,6 +433,22 @@ Letter.S = function()
   return new Letter("S", group);
 }
 
+Letter.T = function()
+{
+  var size = GridSize;
+  var group = new THREE.Group();
+
+  group.add(Letter.GetCenter(size));
+  group.add(Letter.GetUpMiddle(size));
+  group.add(Letter.GetTopMiddle(size));
+  group.add(Letter.GetTopLeft(size));
+  group.add(Letter.GetTopRight(size));
+  group.add(Letter.GetDownMiddle(size));
+  group.add(Letter.GetBotMiddle(size));
+
+  return new Letter("T", group);
+}
+
 Letter.U = function()
 {
   var size = GridSize;
@@ -355,6 +468,24 @@ Letter.U = function()
   group.add(Letter.GetBot2Right(size));
 
   return new Letter("U", group);
+}
+
+Letter.V = function()
+{
+  var size = GridSize;
+  var group = new THREE.Group();
+
+  group.add(Letter.Get2LeftCenter(size));
+  group.add(Letter.Get2RightCenter(size));
+  group.add(Letter.GetDiagonalUp2Left(size));
+  group.add(Letter.GetDiagonalUp2Right(size));
+  group.add(Letter.GetTop2Left(size));
+  group.add(Letter.GetTop2Right(size));
+  group.add(Letter.GetDiagonalDownLeft(size));
+  group.add(Letter.GetDiagonalDownRight(size));
+  group.add(Letter.GetBotMiddle(size));
+
+  return new Letter("V", group);
 }
 
 Letter.W = function()
@@ -381,6 +512,24 @@ Letter.W = function()
   return new Letter("W", group);
 }
 
+Letter.X = function()
+{
+  var size = GridSize;
+  var group = new THREE.Group();
+
+  group.add(Letter.GetCenter(size));
+  group.add(Letter.GetDiagonalUpLeft(size));
+  group.add(Letter.GetDiagonalUpRight(size));
+  group.add(Letter.GetTopLeft(size));
+  group.add(Letter.GetTopRight(size));
+  group.add(Letter.GetDiagonalDownLeft(size));
+  group.add(Letter.GetDiagonalDownRight(size));
+  group.add(Letter.GetBotLeft(size));
+  group.add(Letter.GetBotRight(size));
+
+  return new Letter("X", group);
+}
+
 Letter.Y = function()
 {
   var size = GridSize;
@@ -395,6 +544,24 @@ Letter.Y = function()
   group.add(Letter.GetBotMiddle(size));
 
   return new Letter("Y", group);
+}
+
+Letter.Z = function()
+{
+  var size = GridSize;
+  var group = new THREE.Group();
+
+  group.add(Letter.GetCenter(size));
+  group.add(Letter.GetDiagonalUpRight(size));
+  group.add(Letter.GetTopMiddle(size));
+  group.add(Letter.GetTopLeft(size));
+  group.add(Letter.GetTopRight(size));
+  group.add(Letter.GetDiagonalDownLeft(size));
+  group.add(Letter.GetBotMiddle(size));
+  group.add(Letter.GetBotLeft(size));
+  group.add(Letter.GetBotRight(size));
+
+  return new Letter("Z", group);
 }
 
 /*********************
