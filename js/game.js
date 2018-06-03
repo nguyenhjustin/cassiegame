@@ -218,7 +218,8 @@ GameHolder.prototype.RemoveEnemies = function()
 GameHolder.prototype.CreateLetters = function()
 {
 	//var scale = window.innerWidth / window.innerHeight;
-	var str = "CASSIE WILL YOU BE MY GIRLFRIEND";
+	//var str = "CASSIE WILL YOU BE MY GIRLFRIEND";
+	var str = "HAPPY ONE YEAR ANNIVERSARY CASSIE";
 	var midPoint = Math.floor(str.length / 2);
 	var offset = 10;
 
