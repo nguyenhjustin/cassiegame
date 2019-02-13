@@ -116,6 +116,7 @@
   color: #68c3c0;
 }
 
+/* Avoid red objects text */
 .MessageInstructions span 
 {
   display: block;
