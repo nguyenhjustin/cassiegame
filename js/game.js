@@ -218,9 +218,8 @@ GameHolder.prototype.RemoveEnemies = function()
 GameHolder.prototype.CreateLetters = function()
 {
 	//var scale = window.innerWidth / window.innerHeight;
-	//var str = "CASSIE WILL YOU BE MY GIRLFRIEND";
-  // var str = "HAPPY ONE YEAR ANNIVERSARY CASSIE";
-  var str = "HAPPY VALENTINES DAY CASSIE";
+	
+  var str = this.GetMessage();
 	var midPoint = Math.floor(str.length / 2);
 	var offset = 10;
 
@@ -245,6 +244,55 @@ GameHolder.prototype.CreateLetters = function()
 		this.lettersPool.push(letterObj);
 		this.numTotalLetters++;
 	}
+}
+
+GameHolder.prototype.GetMessage = function()
+{
+  //let date = new Date('2019-06-04T03:24:00');
+  let date = new Date();
+  let year = date.getFullYear();
+  let month = date.getMonth(); // 0-11
+  let day = date.getDate(); // 1-31
+
+  //let str = "CASSIE WILL YOU BE MY GIRLFRIEND";
+  let str = "WILL YOU GIVE ME A SECOND CHANCE";
+
+  if (month == 5 && day == 4)
+  {
+    let num = year - 2017;
+    let numString = ""
+
+    switch (num)
+    {
+      case 1: numString = "ONE"; break;
+      case 2: numString = "TWO"; break;
+      case 3: numString = "THREE"; break;
+      case 4: numString = "FOUR"; break;
+      case 5: numString = "FIVE"; break;
+      case 6: numString = "SIX"; break;
+      case 7: numString = "SEVEN"; break;
+      case 8: numString = "EIGHT"; break;
+      case 9: numString = "NINE"; break;
+      case 10: numString = "TEN"; break;
+      default: break;
+    }
+
+    if (numString == "")
+    {
+      str = "HAPPY ANNIVERSARY CASSIE";
+    }
+    else
+    {
+      str = "HAPPY " + numString + " YEAR ANNIVERSARY CASSIE";
+    }
+  } 
+  else if (month == 1 && day == 14)
+  {
+    str = "HAPPY VALENTINES DAY CASSIE";
+  }
+
+  console.log("MESSAGE: " + str)
+  return str;
 }
 
 GameHolder.prototype.SpawnLetter = function()
