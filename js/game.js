@@ -98,6 +98,29 @@ GameHolder.prototype.Reset = function()
 
 /**
  * @summary
+ * Create the game's audio.
+ */
+GameHolder.prototype.CreateAudio = function()
+{
+  this.audioContext = THREE.AudioContext.getContext()
+
+  const audioListener = new THREE.AudioListener()
+  Camera.add(audioListener)
+
+  const sound = new THREE.Audio(audioListener)
+
+  const audioLoader = new THREE.AudioLoader()
+  
+  audioLoader.load( '../audio/bg.mp3', function(buffer) {
+    sound.setBuffer(buffer)
+    sound.setLoop(true)
+    sound.setVolume(0.5)
+    sound.play()
+  })
+}
+
+/**
+ * @summary
  * Creates the game's scene.
  */
 GameHolder.prototype.CreateScene = function()
@@ -254,8 +277,7 @@ GameHolder.prototype.GetMessage = function()
   let month = date.getMonth(); // 0-11
   let day = date.getDate(); // 1-31
 
-  //let str = "CASSIE WILL YOU BE MY GIRLFRIEND";
-  let str = "WILL YOU GIVE ME A SECOND CHANCE";
+  let str = "CASSIE WILL YOU BE MY GIRLFRIEND";
 
   if (month == 5 && day == 4)
   {
@@ -451,6 +473,8 @@ function Main()
 	// Lock the mouse.
 	Game.LockMouse();
 
+	Game.CreateAudio()
+
 	// Game loop.
 	Loop();
 }
@@ -481,6 +505,10 @@ function AddEventListeners()
  */
 function Loop()
 {
+  if (Game.audioContext.state == 'suspended') {
+    Game.audioContext.resume()
+  }
+
 	Game.UpdateTime();
 
 	if (Game.status == GameStatus.Play)
