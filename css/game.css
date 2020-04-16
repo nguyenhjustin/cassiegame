@@ -1,3 +1,16 @@
+html
+{
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+body
+{
+  overflow-x: hidden;
+  overflow-y: hidden;
+  position: relative;
+}
+
 .GameHolder
 {
   position: absolute;
@@ -116,6 +129,7 @@
   color: #68c3c0;
 }
 
+/* Avoid red objects text */
 .MessageInstructions span 
 {
   display: block;
