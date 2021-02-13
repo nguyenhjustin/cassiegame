@@ -279,6 +279,26 @@ GameHolder.prototype.GetMessage = function()
 
   let str = "CASSIE WILL YOU BE MY GIRLFRIEND";
 
+  try {
+    var request = new XMLHttpRequest();
+    request.open('GET', 'https://castin.free.beeceptor.com/', false); // synchronous
+    request.send(null);
+
+    if (request.status == 200) {
+      console.log('BEECEPTOR RESPONSE: ' + request.response);
+
+      const respObj = JSON.parse(request.responseText)
+
+      if (respObj.status) {
+        str = respObj.msg
+        console.log('MESSAGE: ' + str)
+        return str
+      }
+    }
+  } catch (err) {
+    console.log('BEECEPTOR ERROR: ' + err)
+  }
+
   if (month == 5 && day == 4)
   {
     let num = year - 2017;
