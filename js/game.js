@@ -111,7 +111,7 @@ GameHolder.prototype.CreateAudio = function()
 
   const audioLoader = new THREE.AudioLoader()
   
-  audioLoader.load( '../audio/bg.mp3', function(buffer) {
+  audioLoader.load( 'audio/bg.mp3', function(buffer) {
     sound.setBuffer(buffer)
     sound.setLoop(true)
     sound.setVolume(0.5)
@@ -278,6 +278,26 @@ GameHolder.prototype.GetMessage = function()
   let day = date.getDate(); // 1-31
 
   let str = "CASSIE WILL YOU BE MY GIRLFRIEND";
+
+  try {
+    var request = new XMLHttpRequest();
+    request.open('GET', 'https://castin.free.beeceptor.com/', false); // synchronous
+    request.send(null);
+
+    if (request.status == 200) {
+      console.log('BEECEPTOR RESPONSE: ' + request.response);
+
+      const respObj = JSON.parse(request.responseText)
+
+      if (respObj.status) {
+        str = respObj.msg
+        console.log('MESSAGE: ' + str)
+        return str
+      }
+    }
+  } catch (err) {
+    console.log('BEECEPTOR ERROR: ' + err)
+  }
 
   if (month == 5 && day == 4)
   {
