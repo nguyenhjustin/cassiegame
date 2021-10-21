@@ -332,6 +332,10 @@ GameHolder.prototype.GetMessage = function()
   {
     str = "HAPPY VALENTINES DAY CASSIE";
   }
+  else if (month == 8 && day == 11)
+  {
+    str = "HAPPY BIRTHDAY CASSIE";
+  }
 
   console.log("MESSAGE: " + str)
   return str;
